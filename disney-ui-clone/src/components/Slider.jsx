@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import fetchData from '../services/GlobalApi';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { fetchTrendingMovies } from '../services/movieServices';
 
 const Slider = () => {
-    const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
+    const IMAGE_BASE_URL = import.meta.env.VITE_IMAGE_BASE_URL;
     const [movieList, setMovieList] = useState([]);
     const [error, setErrorMessage] = useState(null);
 
@@ -14,7 +14,7 @@ const Slider = () => {
     useEffect(() => {
         const getMovies = async () => {
             try {
-                const data = await fetchData();
+                const data = await fetchTrendingMovies();
                 setMovieList(data.results);
             } catch (err) {
                 console.error(err);
@@ -78,7 +78,7 @@ const Slider = () => {
                     <img
                         key={index}
                         src={IMAGE_BASE_URL + movie.backdrop_path}
-                        className="min-w-full md:h-[24rem] object-cover object-top mr-5 rounded-md"
+                        className="min-w-full md:h-[30rem] object-cover object-top mr-5 rounded-md focus:outline-none hover:outline hover:outline-4 hover:outline-white cursor-pointer"
                     />
                 ))}
             </div>

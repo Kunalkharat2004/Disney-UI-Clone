@@ -1,10 +1,10 @@
 import DisneyLogo from "../assets/Images/logo.png"
-import { navOptions } from "../data/NavBarOptions"
 import HeaderOption from "./HeaderOption"
 import UserImage from "../assets/Images/userimage.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
 import { FaUser } from "react-icons/fa";
 import { useState } from "react"
+import navOptions from "../data/NavBarOptions";
 
 const Header = () => {
 
@@ -12,11 +12,11 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-2 md:gap-4">
-            <img src={DisneyLogo} alt="logo" className="w-32 md:w-[10rem] object-cover"/>
+            <img src={DisneyLogo} alt="logo" className="w-28 md:w-[10rem] object-cover"/>
             <div className="flex items-center gap-4 md:gap-10
             ">
                 {/* Show The navoption on larger screen size */}
-                <div className="hidden md:flex items-center gap-4 md:gap-10">
+                <div className="hidden md:flex items-center gap-4 md:gap-10 md:mt-2">
                 {
                     navOptions.map((option,index)=>
                     <HeaderOption key={index} Icon={option.icon} title={option.text}/>

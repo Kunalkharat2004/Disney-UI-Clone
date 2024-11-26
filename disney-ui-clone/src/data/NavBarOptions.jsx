@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { RiMovie2Fill } from "react-icons/ri";
 
-export const navOptions = [
+const navOptions = [
    
        { text: "Home",
         icon: <FaHome />}
@@ -30,3 +30,5 @@ export const navOptions = [
         icon: <BiSolidMoviePlay/>
     }
 ]
+
+export default navOptions;
